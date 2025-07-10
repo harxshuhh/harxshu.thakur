@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connect With Me</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Loading screen -->
+  <div id="loader">
+    <h2>Loading...</h2>
+  </div>
+
+  <!-- Background Music -->
+  <audio id="bg-music" src="bgmusic.mp3" loop autoplay muted></audio>
+  <button id="music-btn">🔊</button>
+
+  <div class="container fade-in">
+    <img src="harxshu.jpg" alt="Profile" class="profile-pic glitter-effect" />
+    <h1>HARSHU BELAL</h1>
+    <p class="bio">“त्वां विना अहं स्वर्गमपि न इच्छामि" 💗🧿</p>
+    <div class="links">
+      <a href="https://instagram.com/harxshu.thakur" class="snapchat glow" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://twitter.com/Harxshu161490" class="snapchat glow" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+      <a href="https://www.snapchat.com/add/harxshuhh" class="snapchat glow" target="_blank"><i class="fab fa-snapchat-ghost"></i> Snapchat</a>
+      <a href="mailto:wtfhrshu@gmail.com" class="snapchat glow"><i class="fas fa-envelope"></i> Email Me</a>
+    </div>
+  </div>
+
+  <!-- Floating hearts -->
+  <div class="hearts"></div>
+
+  <script>
+    window.addEventListener("load", () => {
+      document.getElementById("loader").style.display = "none";
+      document.querySelector(".container").classList.add("fade-in");
+    });
+
+    // Music toggle
+    const music = document.getElementById("bg-music");
+    const btn = document.getElementById("music-btn");
+    btn.onclick = () => {
+      if (music.muted) {
+        music.muted = false;
+        btn.textContent = "🔈";
+      } else {
+        music.muted = true;
+        btn.textContent = "🔊";
+      }
+    };
+
+    // Floating hearts
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "💗";
+      heart.style.left = Math.random() * 100 + "vw";
+      document.querySelector(".hearts").appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }, 400);
+  </script>
+</body>
+</html>

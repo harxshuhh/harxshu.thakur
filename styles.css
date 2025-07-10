@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  color: white;
+  overflow-x: hidden;
+}
+
+.container {
+  text-align: center;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 2s ease-in;
+}
+
+.container.fade-in {
+  opacity: 1;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid #fff;
+}
+
+.bio {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.links a {
+  display: block;
+  margin: 1rem auto;
+  padding: 10px 20px;
+  border: 2px solid white;
+  border-radius: 25px;
+  width: fit-content;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.links a.glow:hover {
+  background-color: white;
+  color: #24243e;
+  box-shadow: 0 0 15px #fff, 0 0 30px #ff00cc;
+}
+
+#loader {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  font-size: 2rem;
+}
+
+#music-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  background: #ffffff33;
+  color: white;
+  cursor: pointer;
+}
+
+.glitter-effect {
+  animation: glitter 2s infinite alternate;
+}
+
+@keyframes glitter {
+  0% { filter: drop-shadow(0 0 3px white); }
+  100% { filter: drop-shadow(0 0 10px pink); }
+}
+
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  top: 100vh;
+  font-size: 1.5rem;
+  animation: float 4s ease-in forwards;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-120vh); opacity: 0; }
+}
